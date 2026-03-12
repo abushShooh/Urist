@@ -1,7 +1,8 @@
-* {
+﻿* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Montserrat", "Arial", sans-serif;
 }
 
 body {
@@ -217,12 +218,17 @@ body {
   justify-content: flex-start;
 }
 .hero__title {
-  font-family: "Georgia", "Times New Roman", serif;
+  font-family: "Montserrat", "Arial", sans-serif;
   font-size: 74px;
   line-height: 1.05;
   color: #0f4d74;
   margin-bottom: 26px;
   letter-spacing: -1.8px;
+}
+
+.hero__title span {
+  display: block;
+  white-space: nowrap;
 }
 .hero__text {
   max-width: 520px;
@@ -264,11 +270,30 @@ body {
   gap: 24px 30px;
   max-width: 490px;
 }
-.hero__partners-grid img {
-  height: 38px;
+.hero__partners-grid .hero__partner-logo {
+  --glow-rgb: 118, 177, 233;
+  height: 46px;
   width: auto;
   object-fit: contain;
   justify-self: start;
+  transition: transform 0.22s ease, filter 0.22s ease;
+  will-change: transform, filter;
+}
+.hero__partners-grid .hero__partner-logo:hover {
+  transform: translateY(-3px) scale(1.06);
+  filter: drop-shadow(0 0 14px rgba(var(--glow-rgb), 0.72)) drop-shadow(0 0 24px rgba(var(--glow-rgb), 0.46));
+}
+.hero__partners-grid .hero__partner-logo--airbnb {
+  --glow-rgb: 255, 90, 95;
+}
+.hero__partners-grid .hero__partner-logo--hubspot {
+  --glow-rgb: 255, 122, 48;
+}
+.hero__partners-grid .hero__partner-logo--microsoft {
+  --glow-rgb: 0, 120, 215;
+}
+.hero__partners-grid .hero__partner-logo--google {
+  --glow-rgb: 66, 133, 244;
 }
 .hero__visual {
   flex: 0 0 520px;
@@ -502,8 +527,8 @@ body {
   .hero__partners-grid {
     gap: 16px 20px;
   }
-  .hero__partners-grid img {
-    height: 30px;
+  .hero__partners-grid .hero__partner-logo {
+    height: 38px;
   }
   .hero__visual {
     flex-basis: 430px;
@@ -719,13 +744,26 @@ body {
   }
   .hero__partners-grid {
     width: 100%;
-    grid-template-columns: repeat(2, minmax(130px, 1fr));
+    display: flex;
     gap: 14px;
-    justify-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding-bottom: 4px;
   }
-  .hero__partners-grid img {
-    height: 26px;
-    justify-self: center;
+  .hero__partners-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .hero__partners-grid .hero__partner-logo {
+    height: 32px;
+    flex: 0 0 auto;
+    min-width: 140px;
+    transition: none;
+  }
+  .hero__partners-grid .hero__partner-logo:hover {
+    transform: none;
+    filter: none;
   }
   .legal-help {
     padding: 64px 0 58px;
@@ -764,6 +802,7 @@ body {
     right: 0;
     width: 100%;
     min-height: 82px;
+    margin-bottom: 14px;
   }
   .legal-help__person h3 {
     font-size: 26px;
@@ -786,3 +825,5 @@ body {
     font-size: 14px;
   }
 }
+
+

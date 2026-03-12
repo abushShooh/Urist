@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Montserrat", "Arial", sans-serif;
 }
 
 body {
@@ -246,12 +247,17 @@ body {
   }
 
   &__title {
-    font-family: "Georgia", "Times New Roman", serif;
+    font-family: "Montserrat", "Arial", sans-serif;
     font-size: 74px;
     line-height: 1.05;
     color: #0f4d74;
     margin-bottom: 26px;
     letter-spacing: -1.8px;
+  }
+
+  &__title span {
+    display: block;
+    white-space: nowrap;
   }
 
   &__text {
@@ -298,11 +304,35 @@ body {
     gap: 24px 30px;
     max-width: 490px;
 
-    img {
-      height: 38px;
+    .hero__partner-logo {
+      --glow-rgb: 118, 177, 233;
+      height: 46px;
       width: auto;
       object-fit: contain;
       justify-self: start;
+      transition: transform 0.22s ease, filter 0.22s ease;
+      will-change: transform, filter;
+
+      &:hover {
+        transform: translateY(-3px) scale(1.06);
+        filter: drop-shadow(0 0 14px rgba(var(--glow-rgb), 0.72)) drop-shadow(0 0 24px rgba(var(--glow-rgb), 0.46));
+      }
+    }
+
+    .hero__partner-logo--airbnb {
+      --glow-rgb: 255, 90, 95;
+    }
+
+    .hero__partner-logo--hubspot {
+      --glow-rgb: 255, 122, 48;
+    }
+
+    .hero__partner-logo--microsoft {
+      --glow-rgb: 0, 120, 215;
+    }
+
+    .hero__partner-logo--google {
+      --glow-rgb: 66, 133, 244;
     }
   }
 
@@ -577,8 +607,8 @@ body {
     &__partners-grid {
       gap: 16px 20px;
 
-      img {
-        height: 30px;
+      .hero__partner-logo {
+        height: 38px;
       }
     }
 
@@ -843,13 +873,28 @@ body {
 
     &__partners-grid {
       width: 100%;
-      grid-template-columns: repeat(2, minmax(130px, 1fr));
+      display: flex;
       gap: 14px;
-      justify-items: center;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      padding-bottom: 4px;
 
-      img {
-        height: 26px;
-        justify-self: center;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .hero__partner-logo {
+        height: 32px;
+        flex: 0 0 auto;
+        min-width: 140px;
+        transition: none;
+      }
+
+      .hero__partner-logo:hover {
+        transform: none;
+        filter: none;
       }
     }
 
@@ -899,6 +944,7 @@ body {
       right: 0;
       width: 100%;
       min-height: 82px;
+      margin-bottom: 14px;
 
       h3 {
         font-size: 26px;
@@ -928,3 +974,8 @@ body {
     }
   }
 }
+
+
+
+
+
