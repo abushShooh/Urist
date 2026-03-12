@@ -1,0 +1,416 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#00AEEF" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <title>Navbar</title>
+  <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
+  <link rel="stylesheet" href="./css/main.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Главное меню">
+      <a class="navbar__logo" href="#">
+        <img src="./images/Logo.svg" alt="Lawliet" />
+      </a>
+
+      <ul class="navbar__links">
+        <li><a href="#">CONTACT</a></li>
+        <li><a href="#">TESTIMONIALS</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">TERMS</a></li>
+      </ul>
+
+      <div class="navbar__search-wrap" data-search-wrap>
+        <button class="navbar__search-toggle" type="button" aria-label="Открыть поиск" aria-expanded="false" data-search-toggle>
+          <img src="./images/SearchOutline.svg" alt="" />
+        </button>
+        <input class="navbar__search-input" type="text" placeholder="Search" aria-label="Поиск" data-search-input />
+      </div>
+
+      <button class="navbar__burger" type="button" aria-label="Открыть меню" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#">CONTACT</a>
+      <a href="#">TESTIMONIALS</a>
+      <a href="#">ABOUT</a>
+      <a href="#">TERMS</a>
+
+      <div class="mobile-menu__search-wrap" data-search-wrap>
+        <button class="mobile-menu__search-toggle" type="button" aria-label="Открыть поиск" aria-expanded="false" data-search-toggle>
+          <img src="./images/SearchOutline.svg" alt="" />
+        </button>
+        <input class="mobile-menu__search-input" type="text" placeholder="Search" aria-label="Поиск" data-search-input />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__container">
+        <div class="hero__content">
+          <div class="hero__tab" role="tablist" aria-label="Новость о вакансиях">
+            <span class="hero__tab-indicator" aria-hidden="true"></span>
+            <button class="hero__tab-option hero__tab-label is-selected" type="button" role="tab" aria-selected="true">
+              New
+            </button>
+            <button class="hero__tab-option hero__tab-text" type="button" role="tab" aria-selected="false">
+              Stay connected to the upcoming &amp; Recent jobs
+            </button>
+          </div>
+
+          <h1 class="hero__title">
+            <span>Your Solution</span>
+            <span>Legal Consultacy</span>
+          </h1>
+          <p class="hero__text">
+            We are here to help you take care of your legality
+            with the best service especially for you.
+          </p>
+          <a class="hero__button" href="#">GET STARTED</a>
+
+          <div class="hero__partners">
+            <p class="hero__partners-title">Trusted by 10+ companies in indonesia</p>
+            <div class="hero__partners-grid">
+              <img class="hero__partner-logo hero__partner-logo--airbnb" src="./images/Airbnb Logo.svg" alt="Airbnb" />
+              <img class="hero__partner-logo hero__partner-logo--hubspot" src="./images/Hubspot Logo.svg" alt="HubSpot" />
+              <img class="hero__partner-logo hero__partner-logo--microsoft" src="./images/Microsoft Logo.svg" alt="Microsoft" />
+              <img class="hero__partner-logo hero__partner-logo--google" src="./images/Google Logo.svg" alt="Google" />
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <img src="./images/womenHero.svg" alt="Legal consultant" />
+        </div>
+      </div>
+    </section>
+
+    <section class="legal-help sectionWhy">
+      <div class="legal-help__container">
+        <div class="legal-help__intro">
+          <h2 class="legal-help__title">Why do we help with legalization?</h2>
+          <p class="legal-help__text">
+            We are here for UMKM in Indonesia to carry out the legalization process,
+            which is sometimes complicated.
+          </p>
+        </div>
+
+        <div class="legal-help__panel">
+          <div class="legal-help__person">
+            <h3>Tiara Andini</h3>
+            <p>-Lawyer</p>
+          </div>
+
+          <div class="legal-help__cards">
+            <article class="legal-help__card">
+              <img class="legal-help__icon" src="./images/Circle%20Layer.svg" alt="" />
+              <h3>Enviromental Law</h3>
+              <p>Environmental legal issues might occur since the planned business activities are designed</p>
+            </article>
+
+            <article class="legal-help__card">
+              <img class="legal-help__icon" src="./images/Bag.svg" alt="" />
+              <h3>Corporate and Commercial</h3>
+              <p>We provide a complete range of services for the continuity of your business activities.</p>
+            </article>
+
+            <article class="legal-help__card">
+              <img class="legal-help__icon" src="./images/Rocket.svg" alt="" />
+              <h3>Information and Technology</h3>
+              <p>IT not followed by the existing regulation which might cause legal uncertainty and business uncertainty.</p>
+            </article>
+
+            <article class="legal-help__card">
+              <img class="legal-help__icon" src="./images/User%20Arrows.svg" alt="" />
+              <h3>Other Services</h3>
+              <p>In dealing with disruptive economic and legal challenge, our firm also provide various legal services.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stats__container">
+        <h2 class="stats__title">Some count that matters</h2>
+        <p class="stats__subtitle">Our achievement in the journey depicted in numbers</p>
+
+        <div class="stats__grid">
+          <article class="stats__item">
+            <h3>30</h3>
+            <p>Clients</p>
+          </article>
+
+          <article class="stats__item">
+            <h3>300+</h3>
+            <p>Taken business legalities</p>
+          </article>
+
+          <article class="stats__item">
+            <h3>8</h3>
+            <p>Years of Journey</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="testimonials__container">
+        <h2 class="testimonials__title">Clients Testimonial</h2>
+
+        <div class="testimonials__grid">
+          <article class="testimonial-card">
+            <div class="testimonial-card__bubble">
+              <h3>Incredible Experience</h3>
+              <p>
+                We had an incredible experience working with Landify and were impressed they made such a big
+                difference in only three weeks. Our team is so grateful for the wonderful improvements they made and
+                their ability to get familiar with the concept so quickly.
+              </p>
+            </div>
+
+            <div class="testimonial-card__author">
+              <img class="testimonial-card__avatar testimonial-card__avatar--first" src="./images/clientsPhoto.svg" alt="Anya Tailor Joy" />
+              <div>
+                <h4>Anya Tailor Joy</h4>
+                <p>CEO, SF Industries</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-card__bubble">
+              <h3>Dependable, Responsive, Professional Partner</h3>
+              <p>
+                Fermin Apps has collaborated with Landify team for several projects such as Photo Sharing Apps and
+                Custom Social Networking Apps. The experience has been pleasant, professional and exceeding our
+                expectations.
+              </p>
+            </div>
+
+            <div class="testimonial-card__author">
+              <img class="testimonial-card__avatar testimonial-card__avatar--second" src="./images/clientsPhoto.svg" alt="Sri Alam" />
+              <div>
+                <h4>Sri Alam</h4>
+                <p>CEO, Membagongkan GROUP</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="testimonials__dots" aria-hidden="true">
+          <span class="is-active"></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="cta__container">
+        <div class="cta__content">
+          <h2 class="cta__title">Complex Questions?</h2>
+          <p class="cta__text">
+            Request for a personalized budget for your legal problem. We will send you a coupe options in 24 hours.
+            You can have free consult , if a our first customer
+          </p>
+          <a class="cta__button" href="#">
+            <span class="cta__button-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.2 3.5H4.8C4.1 3.5 3.5 4.1 3.5 4.8C3.5 13.1 10.2 19.8 18.5 19.8C19.2 19.8 19.8 19.2 19.8 18.5V16.1C19.8 15.5 19.4 14.9 18.8 14.8L16.5 14.2C16 14.1 15.5 14.2 15.1 14.6L13.7 16C11.2 14.9 9.1 12.8 8 10.3L9.4 8.9C9.8 8.5 9.9 8 9.8 7.5L9.2 5.2C9.1 4.6 8.6 4.2 8 4.2H7.2V3.5Z" fill="currentColor"/>
+              </svg>
+            </span>
+            <span>Call now</span>
+          </a>
+        </div>
+
+        <div class="cta__image-wrap">
+          <img class="cta__image" src="./images/IMagePrefooter.svg" alt="Call to action" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__container">
+        <a class="footer__logo" href="#">
+          <img src="./images/Logofooter.svg" alt="Lawliet" />
+        </a>
+
+        <div class="footer__columns">
+          <div class="footer__column">
+            <h4>Product</h4>
+            <a href="#">Overview</a>
+            <a href="#">Features</a>
+            <a href="#">Tutorials</a>
+            <a href="#">Pricing</a>
+            <a href="#">Releases</a>
+          </div>
+
+          <div class="footer__column">
+            <h4>Company</h4>
+            <a href="#">About</a>
+            <a href="#">Press</a>
+            <a href="#">Careers</a>
+            <a href="#">Contact</a>
+            <a href="#">Partners</a>
+          </div>
+
+          <div class="footer__column">
+            <h4>Support</h4>
+            <a href="#">Help Center</a>
+            <a href="#">Terms of service</a>
+            <a href="#">Legal</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Status</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="footer__container footer__bottom-inner">
+        <p>© 2021 Lawliet. All rights reserved</p>
+
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram"><img src="./images/Path.svg" alt="" /></a>
+          <a href="#" aria-label="Dribbble"><img src="./images/Path-1.svg" alt="" /></a>
+          <a href="#" aria-label="Twitter"><img src="./images/Path-2.svg" alt="" /></a>
+          <a href="#" aria-label="YouTube"><img src="./images/Path-3.svg" alt="" /></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const burger = document.querySelector(".navbar__burger");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const heroTabs = document.querySelectorAll(".hero__tab");
+
+    burger.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.toggle("is-open");
+      burger.classList.toggle("is-open", isOpen);
+      burger.setAttribute("aria-expanded", isOpen);
+      burger.setAttribute("aria-label", isOpen ? "Закрыть меню" : "Открыть меню");
+    });
+
+    function closeSearch(wrap, toggle, input) {
+      wrap.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Открыть поиск");
+      input.blur();
+    }
+
+    document.querySelectorAll("[data-search-wrap]").forEach((wrap) => {
+      const toggle = wrap.querySelector("[data-search-toggle]");
+      const input = wrap.querySelector("[data-search-input]");
+
+      toggle.addEventListener("click", () => {
+        const isOpen = wrap.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", isOpen);
+        toggle.setAttribute("aria-label", isOpen ? "Закрыть поиск" : "Открыть поиск");
+        if (isOpen) {
+          input.focus();
+        }
+      });
+
+      input.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          closeSearch(wrap, toggle, input);
+        }
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!wrap.contains(event.target)) {
+          closeSearch(wrap, toggle, input);
+        }
+      });
+    });
+
+    function updateHeroTabIndicator(tab, activeOption) {
+      const indicator = tab.querySelector(".hero__tab-indicator");
+      if (!indicator || !activeOption) return;
+      const tabRect = tab.getBoundingClientRect();
+      const optionRect = activeOption.getBoundingClientRect();
+      const x = optionRect.left - tabRect.left;
+      indicator.style.width = `${optionRect.width}px`;
+      indicator.style.transform = `translateX(${x}px)`;
+    }
+
+    heroTabs.forEach((tab) => {
+      const options = tab.querySelectorAll(".hero__tab-option");
+      const initiallySelected = tab.querySelector(".hero__tab-option.is-selected") || options[0];
+
+      if (initiallySelected) {
+        updateHeroTabIndicator(tab, initiallySelected);
+      }
+
+      options.forEach((option) => {
+        option.addEventListener("click", () => {
+          options.forEach((item) => {
+            item.classList.remove("is-selected");
+            item.setAttribute("aria-selected", "false");
+          });
+
+          option.classList.add("is-selected");
+          option.setAttribute("aria-selected", "true");
+          updateHeroTabIndicator(tab, option);
+        });
+      });
+    });
+
+    window.addEventListener("resize", () => {
+      heroTabs.forEach((tab) => {
+        const activeOption = tab.querySelector(".hero__tab-option.is-selected");
+        updateHeroTabIndicator(tab, activeOption);
+      });
+    });
+
+    window.addEventListener("load", () => {
+      heroTabs.forEach((tab) => {
+        const activeOption = tab.querySelector(".hero__tab-option.is-selected");
+        updateHeroTabIndicator(tab, activeOption);
+      });
+    });
+
+    const revealTargets = document.querySelectorAll(
+      ".hero__content, .hero__visual, .legal-help__intro, .legal-help__person, .legal-help__card, .stats__title, .stats__subtitle, .stats__item, .testimonials__title, .testimonial-card, .testimonials__dots, .cta__title, .cta__text, .cta__button, .cta__image-wrap, .footer__logo, .footer__column, .footer__bottom-inner"
+    );
+
+    revealTargets.forEach((el, index) => {
+      el.setAttribute("data-reveal", "");
+      el.style.setProperty("--reveal-delay", `${(index % 6) * 55}ms`);
+    });
+
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            entry.target.classList.toggle("is-visible", entry.isIntersecting);
+          });
+        },
+        {
+          threshold: 0.18,
+          rootMargin: "0px 0px -8% 0px"
+        }
+      );
+
+      revealTargets.forEach((el) => revealObserver.observe(el));
+    } else {
+      revealTargets.forEach((el) => el.classList.add("is-visible"));
+    }
+  </script>
+</body>
+</html>
+
