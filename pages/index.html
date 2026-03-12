@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#00AEEF" />
+  <title>Navbar</title>
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg" />
+  <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Главное меню">
+      <a class="navbar__logo" href="#">
+        <img src="../images/Logo.svg" alt="Lawliet" />
+      </a>
+
+      <ul class="navbar__links">
+        <li><a href="#">CONTACT</a></li>
+        <li><a href="#">TESTIMONIALS</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">TERMS</a></li>
+      </ul>
+
+      <div class="navbar__search-wrap" data-search-wrap>
+        <button class="navbar__search-toggle" type="button" aria-label="Открыть поиск" aria-expanded="false" data-search-toggle>
+          <img src="../images/SearchOutline.svg" alt="" />
+        </button>
+        <input class="navbar__search-input" type="text" placeholder="Search" aria-label="Поиск" data-search-input />
+      </div>
+
+      <button class="navbar__burger" type="button" aria-label="Открыть меню" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#">CONTACT</a>
+      <a href="#">TESTIMONIALS</a>
+      <a href="#">ABOUT</a>
+      <a href="#">TERMS</a>
+
+      <div class="mobile-menu__search-wrap" data-search-wrap>
+        <button class="mobile-menu__search-toggle" type="button" aria-label="Открыть поиск" aria-expanded="false" data-search-toggle>
+          <img src="../images/SearchOutline.svg" alt="" />
+        </button>
+        <input class="mobile-menu__search-input" type="text" placeholder="Search" aria-label="Поиск" data-search-input />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__container">
+        <div class="hero__content">
+          <div class="hero__tab" role="tablist" aria-label="Новость о вакансиях">
+            <span class="hero__tab-indicator" aria-hidden="true"></span>
+            <button class="hero__tab-option hero__tab-label is-selected" type="button" role="tab" aria-selected="true">
+              New
+            </button>
+            <button class="hero__tab-option hero__tab-text" type="button" role="tab" aria-selected="false">
+              Stay connected to the upcoming &amp; Recent jobs
+            </button>
+          </div>
+
+          <h1 class="hero__title">Your Solution<br />Legal Consultacy</h1>
+          <p class="hero__text">
+            We are here to help you take care of your legality
+            with the best service especially for you.
+          </p>
+          <a class="hero__button" href="#">GET STARTED</a>
+
+          <div class="hero__partners">
+            <p class="hero__partners-title">Trusted by 10+ companies in indonesia</p>
+            <div class="hero__partners-grid">
+              <img src="../images/Airbnb Logo.svg" alt="Airbnb" />
+              <img src="../images/Hubspot Logo.svg" alt="HubSpot" />
+              <img src="../images/Microsoft Logo.svg" alt="Microsoft" />
+              <img src="../images/Google Logo.svg" alt="Google" />
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <img src="../images/womenHero.svg" alt="Legal consultant" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const burger = document.querySelector(".navbar__burger");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const heroTabs = document.querySelectorAll(".hero__tab");
+
+    burger.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.toggle("is-open");
+      burger.classList.toggle("is-open", isOpen);
+      burger.setAttribute("aria-expanded", isOpen);
+      burger.setAttribute("aria-label", isOpen ? "Закрыть меню" : "Открыть меню");
+    });
+
+    function closeSearch(wrap, toggle, input) {
+      wrap.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Открыть поиск");
+      input.blur();
+    }
+
+    document.querySelectorAll("[data-search-wrap]").forEach((wrap) => {
+      const toggle = wrap.querySelector("[data-search-toggle]");
+      const input = wrap.querySelector("[data-search-input]");
+
+      toggle.addEventListener("click", () => {
+        const isOpen = wrap.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", isOpen);
+        toggle.setAttribute("aria-label", isOpen ? "Закрыть поиск" : "Открыть поиск");
+        if (isOpen) {
+          input.focus();
+        }
+      });
+
+      input.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          closeSearch(wrap, toggle, input);
+        }
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!wrap.contains(event.target)) {
+          closeSearch(wrap, toggle, input);
+        }
+      });
+    });
+
+    function updateHeroTabIndicator(tab, activeOption) {
+      const indicator = tab.querySelector(".hero__tab-indicator");
+      if (!indicator || !activeOption) return;
+      const tabRect = tab.getBoundingClientRect();
+      const optionRect = activeOption.getBoundingClientRect();
+      const x = optionRect.left - tabRect.left;
+      indicator.style.width = `${optionRect.width}px`;
+      indicator.style.transform = `translateX(${x}px)`;
+    }
+
+    heroTabs.forEach((tab) => {
+      const options = tab.querySelectorAll(".hero__tab-option");
+      const initiallySelected = tab.querySelector(".hero__tab-option.is-selected") || options[0];
+
+      if (initiallySelected) {
+        updateHeroTabIndicator(tab, initiallySelected);
+      }
+
+      options.forEach((option) => {
+        option.addEventListener("click", () => {
+          options.forEach((item) => {
+            item.classList.remove("is-selected");
+            item.setAttribute("aria-selected", "false");
+          });
+
+          option.classList.add("is-selected");
+          option.setAttribute("aria-selected", "true");
+          updateHeroTabIndicator(tab, option);
+        });
+      });
+    });
+
+    window.addEventListener("resize", () => {
+      heroTabs.forEach((tab) => {
+        const activeOption = tab.querySelector(".hero__tab-option.is-selected");
+        updateHeroTabIndicator(tab, activeOption);
+      });
+    });
+
+    window.addEventListener("load", () => {
+      heroTabs.forEach((tab) => {
+        const activeOption = tab.querySelector(".hero__tab-option.is-selected");
+        updateHeroTabIndicator(tab, activeOption);
+      });
+    });
+  </script>
+</body>
+</html>
