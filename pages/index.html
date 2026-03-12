@@ -163,6 +163,58 @@
         </div>
       </div>
     </section>
+
+    <section class="testimonials">
+      <div class="testimonials__container">
+        <h2 class="testimonials__title">Clients Testimonial</h2>
+
+        <div class="testimonials__grid">
+          <article class="testimonial-card">
+            <div class="testimonial-card__bubble">
+              <h3>Incredible Experience</h3>
+              <p>
+                We had an incredible experience working with Landify and were impressed they made such a big
+                difference in only three weeks. Our team is so grateful for the wonderful improvements they made and
+                their ability to get familiar with the concept so quickly.
+              </p>
+            </div>
+
+            <div class="testimonial-card__author">
+              <img class="testimonial-card__avatar testimonial-card__avatar--first" src="../images/clientsPhoto.svg" alt="Anya Tailor Joy" />
+              <div>
+                <h4>Anya Tailor Joy</h4>
+                <p>CEO, SF Industries</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-card__bubble">
+              <h3>Dependable, Responsive, Professional Partner</h3>
+              <p>
+                Fermin Apps has collaborated with Landify team for several projects such as Photo Sharing Apps and
+                Custom Social Networking Apps. The experience has been pleasant, professional and exceeding our
+                expectations.
+              </p>
+            </div>
+
+            <div class="testimonial-card__author">
+              <img class="testimonial-card__avatar testimonial-card__avatar--second" src="../images/clientsPhoto.svg" alt="Sri Alam" />
+              <div>
+                <h4>Sri Alam</h4>
+                <p>CEO, Membagongkan GROUP</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="testimonials__dots" aria-hidden="true">
+          <span class="is-active"></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </section>
   </main>
 
   <script>
@@ -257,7 +309,7 @@
     });
 
     const revealTargets = document.querySelectorAll(
-      ".hero__content, .hero__visual, .legal-help__intro, .legal-help__person, .legal-help__card, .stats__title, .stats__subtitle, .stats__item"
+      ".hero__content, .hero__visual, .legal-help__intro, .legal-help__person, .legal-help__card, .stats__title, .stats__subtitle, .stats__item, .testimonials__title, .testimonial-card, .testimonials__dots"
     );
 
     revealTargets.forEach((el, index) => {
