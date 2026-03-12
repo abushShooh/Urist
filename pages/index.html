@@ -255,6 +255,33 @@
         updateHeroTabIndicator(tab, activeOption);
       });
     });
+
+    const revealTargets = document.querySelectorAll(
+      ".hero__content, .hero__visual, .legal-help__intro, .legal-help__person, .legal-help__card, .stats__title, .stats__subtitle, .stats__item"
+    );
+
+    revealTargets.forEach((el, index) => {
+      el.setAttribute("data-reveal", "");
+      el.style.setProperty("--reveal-delay", `${(index % 6) * 55}ms`);
+    });
+
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            entry.target.classList.toggle("is-visible", entry.isIntersecting);
+          });
+        },
+        {
+          threshold: 0.18,
+          rootMargin: "0px 0px -8% 0px"
+        }
+      );
+
+      revealTargets.forEach((el) => revealObserver.observe(el));
+    } else {
+      revealTargets.forEach((el) => el.classList.add("is-visible"));
+    }
   </script>
 </body>
 </html>

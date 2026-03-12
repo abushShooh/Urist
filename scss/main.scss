@@ -12,6 +12,29 @@ body {
   overflow-x: hidden;
 }
 
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px) scale(0.985);
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 .site-header {
   background: #f8f8f8;
   position: relative;
@@ -178,7 +201,7 @@ body {
   &__tab {
     position: relative;
     display: inline-grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto minmax(0, 1fr);
     align-items: center;
     column-gap: 8px;
     min-height: 52px;
@@ -913,7 +936,7 @@ body {
 
     &__tab {
       width: 100%;
-      min-height: 42px;
+      min-height: 50px;
       padding: 4px 10px 4px 6px;
       column-gap: 4px;
       margin-bottom: 14px;
@@ -926,19 +949,20 @@ body {
     }
 
     &__tab-label {
-      min-width: 58px;
-      padding: 0 12px;
+      min-width: 54px;
+      padding: 0 10px;
       font-size: 12px;
     }
 
     &__tab-text {
-      font-size: 12px;
-      white-space: nowrap;
+      font-size: 11px;
+      white-space: normal;
+      line-height: 1.2;
     }
 
     &__tab-option {
-      min-height: 30px;
-      padding: 0 10px;
+      min-height: 42px;
+      padding: 0 8px;
     }
 
     &__title {
